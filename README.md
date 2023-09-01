@@ -1,46 +1,44 @@
-## MyContract Solidity Smart Contract
+# Cryptocurrency Smart Contract
 
-## Overview
-
-This repository contains the source code for the MyContract Solidity smart contract. The contract allows users to interact with a simple cryptocurrency storage and manipulation system. It enables users to increase the cryptocurrency balance and view the current balance.
+This is a simple Ethereum smart contract written in Solidity that implements a basic cryptocurrency system. The contract allows users to manage their balances by incrementing and decrementing their cryptocurrency holdings. The contract keeps track of user balances using a private mapping and emits events for balance changes.
 
 ## Prerequisites
 
-### Solidity Compiler: The contract is written in Solidity and requires a Solidity compiler compatible with version ^0.8.0.
+To interact with this smart contract, you'll need:
 
-## Getting Started
+1. An Ethereum wallet and address.
+2. Access to an Ethereum development environment (such as Remix or Truffle).
+3. Ether (ETH) to cover transaction fees.
+   
+## Contract Details
 
-Follow the steps below to get started with the project:
+### State Variables
 
-### a)Clone the Repository: Start by cloning this repository to your local machine.
+balances: A private mapping that associates Ethereum addresses with their corresponding cryptocurrency balances.
 
-git clone https://github.com/your-username/MyContract.git
+### Events
 
-### b)Compile the Contract: Use a Solidity compiler to compile the MyContract.sol file. You can use tools like Remix or Truffle for compilation.
+Transfer: This event is emitted whenever a balance is incremented or decremented. It provides information about the sender, receiver, and the value transferred.
 
-### c)Deploy the Contract: Deploy the compiled contract to an Ethereum network of your choice. You can use tools like Remix or Truffle for deployment.
+## Functions
 
-Interact with the Contract: Once deployed, you can interact with the contract using its functions. The two main functions are:
+incrementBalance(uint256 value): Allows a user to increase their balance by a specified value. The function updates the user's balance and emits a Transfer event.
 
-a) additionCryptocurrency(): Increments the cryptocurrency balance by 1.
+decrementBalance(uint256 value): Allows a user to decrease their balance by a specified value, provided they have sufficient funds. The function updates the user's balance and emits a Transfer event.
 
-b) receiveCryptocurrency(): Returns the current cryptocurrency balance.
+getBalance(address account): Retrieves the cryptocurrency balance of a specific account.
 
-## HTML CODE
+## Usage
 
-## Getting Started
+Deploy the smart contract to an Ethereum development environment or testnet.
+Interact with the contract using a compatible Ethereum wallet or a development tool like Remix.
 
-Follow the steps below to get started with the project:
+Example Workflow:
 
-### a)Clone the Repository: Start by cloning this repository to your local machine.
-
-git clone https://github.com/your-username/Ethereum-Mod-2.git
-
-### b)Install Web3.js: Since the project uses Web3.js, you need to include the Web3.js library. You can do this by either downloading the library and referencing it in your HTML or using a content delivery network (CDN).
-
-### c)Configure Application: Open the application.js file and replace the placeholders with your actual contract address and ABI (Application Binary Interface). This information is required to interact with your deployed smart contract. The additionCryptocurrency and receiveCryptocurrency functions should be defined in this file to interact with your smart contract.
-
-### d)Open the HTML Page: Open the index.html file in a web browser. You will see a webpage that allows you to interact with the smart contract.
+1. Deploy the contract.
+2. Call incrementBalance(uint256 value) to add cryptocurrency to your balance.
+3. Call decrementBalance(uint256 value) to spend cryptocurrency if you have a sufficient balance.
+4. Call getBalance(address account) to check the balance of a specific Ethereum address.
 
 ## Author
 SHUBHAM YADAV
