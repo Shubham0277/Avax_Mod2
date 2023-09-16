@@ -1,47 +1,40 @@
 # Cryptocurrency Smart Contract
+1. Smart contract has at least two functions
+2. Value of the functions from the smart contract are visible on the frontend of the application
 
-This is a simple Ethereum smart contract written in Solidity that implements a basic cryptocurrency system. The contract allows users to manage their balances by incrementing and decrementing their cryptocurrency holdings. The contract keeps track of user balances using a private mapping and emits events for balance changes.
+## Overview
+This is a simple React component for a Crypto ATM application. It allows users to connect their MetaMask wallet, view their account balance, deposit and withdraw ETH, and check the owner's name.
 
-## Prerequisites
+## Smart Contract
 
-To interact with this smart contract, you'll need:
+### Assessment.sol
 
-1. An Ethereum wallet and address.
-2. Access to an Ethereum development environment (such as Remix or Truffle).
-3. Ether (ETH) to cover transaction fees.
-   
-## Contract Details
+The `Assessment.sol` smart contract is the core component of this project. It contains at least two functions that are used to interact with the contract.
 
-### State Variables
+#### `getBalance()`
 
-balances: A private mapping that associates Ethereum addresses with their corresponding cryptocurrency balances.
+Returns the current balance of the contract.
 
-### Events
+#### `deposit(uint256 _amount)`
 
-Transfer: This event is emitted whenever a balance is incremented or decremented. It provides information about the sender, receiver, and the value transferred.
+Deposits the specified amount of funds into the contract.
 
-## Functions
+### Frontend Integration
 
-incrementBalance(uint256 value): Allows a user to increase their balance by a specified value. The function updates the user's balance and emits a Transfer event.
+The functions from the smart contract are integrated into the frontend of the application to provide a seamless user experience. Here's how they are visible on the frontend:
 
-decrementBalance(uint256 value): Allows a user to decrease their balance by a specified value, provided they have sufficient funds. The function updates the user's balance and emits a Transfer event.
+- The `getBalance()` function is used to display the current balance of the contract on the user interface.
+- The `deposit(_amount)` function is triggered when users want to deposit funds into the contract. They can enter the amount they wish to deposit, and the frontend handles the transaction and updates the balance accordingly.
 
-getBalance(address account): Retrieves the cryptocurrency balance of a specific account.
+## Commands
+After cloning the github, you will want to do the following to get the code running on your computer.
 
-## Usage
+1. Inside the project directory, in the terminal type: npm i
+2. Open two additional terminals in your VS code
+3. In the second terminal type: npx hardhat node
+4. In the third terminal, type: npx hardhat run --network localhost deploy/deploy.js
+5. Back in the first terminal, type npm run dev to launch the front-end.
 
-Deploy the smart contract to an Ethereum development environment or testnet.
-Interact with the contract using a compatible Ethereum wallet or a development tool like Remix.
-
-Example Workflow:
-
-1. Deploy the contract.
-2. Call incrementBalance(uint256 value) to add cryptocurrency to your balance.
-3. Call decrementBalance(uint256 value) to spend cryptocurrency if you have a sufficient balance.
-4. Call getBalance(address account) to check the balance of a specific Ethereum address.
-
-## Author
-SHUBHAM YADAV
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
